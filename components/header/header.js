@@ -6,6 +6,7 @@ headerTemplate.innerHTML = `
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
+        <li><a href="pistone.html">Pistone</a></li>
       </ul>
     </nav>
   </header>

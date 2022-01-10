@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+    crossorigin="anonymous" />
+  <link href="../style/style.css" rel="stylesheet" type="text/css" />
+  <link href="../style/pistone.css" rel="stylesheet" type="text/css" />
+  <script src="../components/header/header.js" type="text/javascript" defer></script>
+  <script src="../components/footer/footer.js" type="text/javascript" defer></script>
+  <title>Pistone</title>
+</head>
+
+<body>
+
+  <header-component></header-component>
+
+  <main>
+    <div>
+      <div id="pistone" onmousedown="movimento()"></div>
+    </div>
+  </main>
+
+  <footer-component></footer-component>
+
+
+  <script>
+    var pistone = document.getElementById("pistone");
+    pistone.style.top = "0px"
+    pistone.style.left = "0px"
+
+    var velocita = 4
+
+    document.addEventListener('keydown', function (e) {
+      console.log(e.which)
+      if (e.which === 37)
+        goLeft()
+      else if (e.which === 38)
+        goUp()
+      else if (e.which === 39)
+      goRight()
+      else if (e.which === 40)
+        goDown()
+
+    })
+
+    const goLeft = () => {
+      var leftNumbers = pistone.style.left.replace('px', '')
+      var left = parseInt(leftNumbers, 10)
+      pistone.style.left = `${left - velocita}px`
+    }
+    const goRight = () => {
+      var leftNumbers = pistone.style.left.replace('px', '')
+      var left = parseInt(leftNumbers, 10)
+      pistone.style.left = `${left + velocita}px`
+    }
+    const goUp = () => {
+      var topNumbers = pistone.style.top.replace('px', '')
+      var top = parseInt(topNumbers, 10)
+      pistone.style.top = `${top - velocita}px`
+    }
+    const goDown = () => {
+      var topNumbers = pistone.style.top.replace('px', '')
+      var top = parseInt(topNumbers, 10)
+      pistone.style.top = `${top + velocita}px`
+    }
+
+  </script>
+
+
+</body>
+
+</html>
